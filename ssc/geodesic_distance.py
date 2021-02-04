@@ -62,8 +62,9 @@ if __name__ == "__main__":
             dist = GeodesicDistance()
             start = torch.Tensor([[[start_phi, start_theta]]])
             stop = torch.Tensor([[[stop_phi, stop_theta]]])
-            error = dist(start, stop)
-            print(error)
+            geod_dist = dist(start, stop)
+            l2_dist = torch.linalg.norm(start - stop)
+            print(f'Geodesic Distance: {float(geod_dist)}, L2 Distance: {float(l2_dist)}')
     cv2.namedWindow('image')
     cv2.setMouseCallback('image', callback)
     while(1):

@@ -85,12 +85,16 @@ if __name__ == "__main__":
     from geodesic_gaussian import GeodesicGaussian
     from spherical_grid import SphericalGrid, Grid
     import cv2
+    import sys
+
+    mode = sys.argv[1]
     
-    sph = SphericalGrid(width=512)
+    sg = SphericalGrid(width=512)
     g = Grid(width=512, height=256)
     gg = GeodesicGaussian(std=9.0)
-    # corners = QuasiManhattanCenterOfMass(mode='standard')
-    corners = QuasiManhattanCenterOfMass(mode='periodic')
+    # scom = QuasiManhattanCenterOfMass(mode='standard')
+    # scom = QuasiManhattanCenterOfMass(mode='periodic')
+    scom = QuasiManhattanCenterOfMass(mode=mode)
 
     B, K = 5, 4
 
@@ -99,10 +103,10 @@ if __name__ == "__main__":
     keypoints[0, 1, 0] = 0.99
     keypoints[:, 2:, 0] = keypoints[:, :2, 0]
 
-    sgrid = sph.forward(keypoints)
+    sgrid = sg.forward(keypoints)
     grid = g.forward(keypoints)
     gaussian = gg.forward(keypoints, sgrid)
-    manhattan = corners.forward(grid, gaussian)
+    corners = scom.forward(grid, gaussian)
 
     for b in range(B):
         for k in range(K):
@@ -110,7 +114,7 @@ if __name__ == "__main__":
             img = (img - img.min()) / (img.max() - img.min())
             corner_n_heatmap = img.unsqueeze(-1).repeat(1, 1, 3).numpy()
             corner_n_heatmap = (corner_n_heatmap * 255.0).astype(np.uint8)
-            u, v = manhattan[b, k]
+            u, v = corners[b, k]
             x = (u + 1.0) / 2.0 * 512
             y = (v + 1.0) / 2.0 * 256
             cv2.circle(corner_n_heatmap, (x,y), 3, (255,0,0), -1)
