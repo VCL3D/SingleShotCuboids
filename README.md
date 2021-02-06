@@ -124,19 +124,19 @@ Examples on the different test sets follow, with the images on the left being th
 <img width=45% src="./assets/images/s2d3d_1_cuboid.png">
 -->
 
-<img width=45% src="./assets/images/s2d3d_2_pred.png"><img width=45% src="./assets/images/s2d3d_2_cuboid.png">
+<img width=30% src="./assets/images/s2d3d_2_pred.png"><img width=30% src="./assets/images/s2d3d_2_cuboid.png">
 
-<img width=45% src="./assets/images/s2d3d_3_pred.png"><img width=45% src="./assets/images/s2d3d_3_cuboid.png">
+<img width=30% src="./assets/images/s2d3d_3_pred.png"><img width=30% src="./assets/images/s2d3d_3_cuboid.png">
 
-<img width=45% src="./assets/images/s2d3d_4_pred.png"><img width=45% src="./assets/images/s2d3d_4_cuboid.png">
+<img width=30% src="./assets/images/s2d3d_4_pred.png"><img width=30% src="./assets/images/s2d3d_4_cuboid.png">
 
 ### Structure3D
 
-<img width=45% src="./assets/images/s3d_1_pred.png"><img width=45% src="./assets/images/s3d_1_cuboid.png">
+<img width=30% src="./assets/images/s3d_1_pred.png"><img width=30% src="./assets/images/s3d_1_cuboid.png">
 
-<img width=45% src="./assets/images/s3d_2_pred.png"><img width=45% src="./assets/images/s3d_2_cuboid.png">
+<img width=30% src="./assets/images/s3d_2_pred.png"><img width=30% src="./assets/images/s3d_2_cuboid.png">
 
-<img width=45% src="./assets/images/s3d_3_pred.png"><img width=45% src="./assets/images/s3d_3_cuboid.png">
+<img width=30% src="./assets/images/s3d_3_pred.png"><img width=30% src="./assets/images/s3d_3_cuboid.png">
 
 <!--
 <img width=45% src="./assets/images/s3d_4_pred.png">
@@ -145,16 +145,16 @@ Examples on the different test sets follow, with the images on the left being th
 
 ### Kujiale
 
-<img width=45% src="./assets/images/kuj_1_pred.png"><img width=45% src="./assets/images/kuj_1_cuboid.png">
+<img width=30% src="./assets/images/kuj_1_pred.png"><img width=30% src="./assets/images/kuj_1_cuboid.png">
 
 <!--
 <img width=45% src="./assets/images/kuj_2_pred.png">
 <img width=45% src="./assets/images/kuj_2_cuboid.png">
 -->
 
-<img width=45% src="./assets/images/kuj_3_pred.png"><img width=45% src="./assets/images/kuj_3_cuboid.png">
+<img width=30% src="./assets/images/kuj_3_pred.png"><img width=30% src="./assets/images/kuj_3_cuboid.png">
 
-<img width=45% src="./assets/images/kuj_4_pred.png"><img width=45% src="./assets/images/kuj_4_cuboid.png">
+<img width=30% src="./assets/images/kuj_4_pred.png"><img width=30% src="./assets/images/kuj_4_cuboid.png">
 
 ## Spherically Padded Convolution
 
