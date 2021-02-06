@@ -42,7 +42,7 @@ The following images show a Gaussian distribution defined on the sphere (left) a
 
 <img width=20% src="./assets/images/3_sphere.png"><img width=40% src="./assets/images/3_equi.png">
 
-<img width=32% src="./assets/images/4_sphere.png"><img width=64% src="./assets/images/4_equi.png">
+<img width=20% src="./assets/images/4_sphere.png"><img width=40% src="./assets/images/4_equi.png">
 
 Different (20) random centroid distributions can be visualized by runningwith:
 
@@ -106,16 +106,16 @@ Examples on the different test sets follow, with the images on the left being th
 
 ### Sun360
 
-<img width=40% src="./assets/images/sun360_1_pred.png"><img width=40% src="./assets/images/sun360_1_cuboid.png">
+<img width=30% src="./assets/images/sun360_1_pred.png"><img width=30% src="./assets/images/sun360_1_cuboid.png">
 
-<img width=40% src="./assets/images/sun360_2_pred.png"><img width=40% src="./assets/images/sun360_2_cuboid.png">
+<img width=30% src="./assets/images/sun360_2_pred.png"><img width=30% src="./assets/images/sun360_2_cuboid.png">
 
 <!--
 <img width=45% src="./assets/images/sun360_3_pred.png">
 <img width=45% src="./assets/images/sun360_3_cuboid.png">
 -->
 
-<img width=40% src="./assets/images/sun360_4_pred.png"><img width=40% src="./assets/images/sun360_4_cuboid.png">
+<img width=30% src="./assets/images/sun360_4_pred.png"><img width=30% src="./assets/images/sun360_4_cuboid.png">
 
 ### Stanford2D3D
 
