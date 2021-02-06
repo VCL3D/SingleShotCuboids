@@ -34,20 +34,15 @@ The `GeodesicGaussian` module found in `./ssc/geodesic_gaussian.py` relies on th
 
 The following images show a Gaussian distribution defined on the sphere (left) and the corresponding distribution reconstructed on the equirectangular domain (right).
 
-<img width=32% src="./assets/images/0_sphere.png">
-<img width=64% src="./assets/images/0_equi.png">
+<img width=32% src="./assets/images/0_sphere.png"><img width=64% src="./assets/images/0_equi.png">
 
-<img width=32% src="./assets/images/1_sphere.png">
-<img width=64% src="./assets/images/1_equi.png">
+<img width=32% src="./assets/images/1_sphere.png"><img width=64% src="./assets/images/1_equi.png">
 
-<img width=32% src="./assets/images/2_sphere.png">
-<img width=64% src="./assets/images/2_equi.png">
+<img width=32% src="./assets/images/2_sphere.png"><img width=64% src="./assets/images/2_equi.png">
 
-<img width=32% src="./assets/images/3_sphere.png">
-<img width=64% src="./assets/images/3_equi.png">
+<img width=32% src="./assets/images/3_sphere.png"><img width=64% src="./assets/images/3_equi.png">
 
-<img width=32% src="./assets/images/4_sphere.png">
-<img width=64% src="./assets/images/4_equi.png">
+<img width=32% src="./assets/images/4_sphere.png"><img width=64% src="./assets/images/4_equi.png">
 
 Different (20) random centroid distributions can be visualized by runningwith:
 
@@ -111,19 +106,16 @@ Examples on the different test sets follow, with the images on the left being th
 
 ### Sun360
 
-<img width=45% src="./assets/images/sun360_1_pred.png">
-<img width=45% src="./assets/images/sun360_1_cuboid.png">
+<img width=40% src="./assets/images/sun360_1_pred.png"><img width=40% src="./assets/images/sun360_1_cuboid.png">
 
-<img width=45% src="./assets/images/sun360_2_pred.png">
-<img width=45% src="./assets/images/sun360_2_cuboid.png">
+<img width=40% src="./assets/images/sun360_2_pred.png"><img width=40% src="./assets/images/sun360_2_cuboid.png">
 
 <!--
 <img width=45% src="./assets/images/sun360_3_pred.png">
 <img width=45% src="./assets/images/sun360_3_cuboid.png">
 -->
 
-<img width=45% src="./assets/images/sun360_4_pred.png">
-<img width=45% src="./assets/images/sun360_4_cuboid.png">
+<img width=40% src="./assets/images/sun360_4_pred.png"><img width=40% src="./assets/images/sun360_4_cuboid.png">
 
 ### Stanford2D3D
 
@@ -132,25 +124,19 @@ Examples on the different test sets follow, with the images on the left being th
 <img width=45% src="./assets/images/s2d3d_1_cuboid.png">
 -->
 
-<img width=45% src="./assets/images/s2d3d_2_pred.png">
-<img width=45% src="./assets/images/s2d3d_2_cuboid.png">
+<img width=45% src="./assets/images/s2d3d_2_pred.png"><img width=45% src="./assets/images/s2d3d_2_cuboid.png">
 
-<img width=45% src="./assets/images/s2d3d_3_pred.png">
-<img width=45% src="./assets/images/s2d3d_3_cuboid.png">
+<img width=45% src="./assets/images/s2d3d_3_pred.png"><img width=45% src="./assets/images/s2d3d_3_cuboid.png">
 
-<img width=45% src="./assets/images/s2d3d_4_pred.png">
-<img width=45% src="./assets/images/s2d3d_4_cuboid.png">
+<img width=45% src="./assets/images/s2d3d_4_pred.png"><img width=45% src="./assets/images/s2d3d_4_cuboid.png">
 
 ### Structure3D
 
-<img width=45% src="./assets/images/s3d_1_pred.png">
-<img width=45% src="./assets/images/s3d_1_cuboid.png">
+<img width=45% src="./assets/images/s3d_1_pred.png"><img width=45% src="./assets/images/s3d_1_cuboid.png">
 
-<img width=45% src="./assets/images/s3d_2_pred.png">
-<img width=45% src="./assets/images/s3d_2_cuboid.png">
+<img width=45% src="./assets/images/s3d_2_pred.png"><img width=45% src="./assets/images/s3d_2_cuboid.png">
 
-<img width=45% src="./assets/images/s3d_3_pred.png">
-<img width=45% src="./assets/images/s3d_3_cuboid.png">
+<img width=45% src="./assets/images/s3d_3_pred.png"><img width=45% src="./assets/images/s3d_3_cuboid.png">
 
 <!--
 <img width=45% src="./assets/images/s3d_4_pred.png">
@@ -159,19 +145,16 @@ Examples on the different test sets follow, with the images on the left being th
 
 ### Kujiale
 
-<img width=45% src="./assets/images/kuj_1_pred.png">
-<img width=45% src="./assets/images/kuj_1_cuboid.png">
+<img width=45% src="./assets/images/kuj_1_pred.png"><img width=45% src="./assets/images/kuj_1_cuboid.png">
 
 <!--
 <img width=45% src="./assets/images/kuj_2_pred.png">
 <img width=45% src="./assets/images/kuj_2_cuboid.png">
 -->
 
-<img width=45% src="./assets/images/kuj_3_pred.png">
-<img width=45% src="./assets/images/kuj_3_cuboid.png">
+<img width=45% src="./assets/images/kuj_3_pred.png"><img width=45% src="./assets/images/kuj_3_cuboid.png">
 
-<img width=45% src="./assets/images/kuj_4_pred.png">
-<img width=45% src="./assets/images/kuj_4_cuboid.png">
+<img width=45% src="./assets/images/kuj_4_pred.png"><img width=45% src="./assets/images/kuj_4_cuboid.png">
 
 ## Spherically Padded Convolution
 
@@ -181,7 +164,7 @@ The `SphericalConv2d` module in `./ssc/spherically_padded_conv.py` applies the p
 
 ## Citation
 If you used or found this code and/or models useful, please cite the following:
-```json
+```
 @arcticle{zioulis2021singleshot,
   author       = "Zioulis, Nikolaos and Alvarez, Federico and Zarpalas, Dimitris and Daras, Petros",
   title        = "Single-Shot Cuboids: Geodesics-based End-to-end Manhattan Aligned Layout Estimation from Spherical Panoramas",
