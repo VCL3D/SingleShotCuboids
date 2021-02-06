@@ -34,13 +34,13 @@ The `GeodesicGaussian` module found in `./ssc/geodesic_gaussian.py` relies on th
 
 The following images show a Gaussian distribution defined on the sphere (left) and the corresponding distribution reconstructed on the equirectangular domain (right).
 
-<img width=32% src="./assets/images/0_sphere.png"><img width=64% src="./assets/images/0_equi.png">
+<img width=20% src="./assets/images/0_sphere.png"><img width=40% src="./assets/images/0_equi.png">
 
-<img width=32% src="./assets/images/1_sphere.png"><img width=64% src="./assets/images/1_equi.png">
+<img width=20% src="./assets/images/1_sphere.png"><img width=40% src="./assets/images/1_equi.png">
 
-<img width=32% src="./assets/images/2_sphere.png"><img width=64% src="./assets/images/2_equi.png">
+<img width=20% src="./assets/images/2_sphere.png"><img width=40% src="./assets/images/2_equi.png">
 
-<img width=32% src="./assets/images/3_sphere.png"><img width=64% src="./assets/images/3_equi.png">
+<img width=20% src="./assets/images/3_sphere.png"><img width=40% src="./assets/images/3_equi.png">
 
 <img width=32% src="./assets/images/4_sphere.png"><img width=64% src="./assets/images/4_equi.png">
 
