@@ -3,12 +3,12 @@ import numpy as np
 import functools
 import kornia
 
-class CuboidAlignment(torch.nn.Module):
+class CuboidFitting(torch.nn.Module):
     def __init__(self,
         mode:               str='joint', # one of ['joint', 'floor', 'ceil', 'avg']
         floor_distance:     float=-1.6,
     ):
-        super(CuboidAlignment, self).__init__()
+        super(CuboidFitting, self).__init__()
         self.homography_func = functools.partial(
             self._homography_floor_svd,
             floor_z=floor_distance)\
@@ -262,20 +262,24 @@ class CuboidAlignment(torch.nn.Module):
 if __name__ == "__main__":
     from cuboid_test_utils import *
     from cuboid_tests import *
+    import sys
 
+    selected_test ='15' if len(sys.argv) < 2 else str(sys.argv[1])
+    selected_mode ='floor' if len(sys.argv) < 3 else str(sys.argv[2])
     modes = ['floor', 'ceil', 'joint', 'avg']
     for name, test in get_tests():
-        if '15' not in name:
+        if selected_test not in name:
             continue
         for mode in modes:
-            if 'floor' not in mode:
+            if selected_mode not in mode:
                 continue
-            alignment = CuboidAlignment(mode=mode)
+            alignment = CuboidFitting(mode=mode)
             
             top, bottom = test()
-            top = top.cuda()
-            bottom = bottom.cuda()
-            alignment = alignment.cuda()
+            if torch.cuda.is_available():
+                top = top.cuda()
+                bottom = bottom.cuda()
+                alignment = alignment.cuda()
 
             corners = torch.cat([top, bottom], dim=1)
             aligned = alignment.forward(corners)
@@ -288,5 +292,4 @@ if __name__ == "__main__":
             draw_points(top_pts2d, images, [0, 255, 0])
             draw_points(bottom_pts2d, images, [0, 255, 0])
             show_frozen(f"{mode} {name}", images[0])
-            # show_playback(f"{mode} {name}", images[0])
-    print("finished")
+            # show_playback(f"{mode} {name}", images[0])    

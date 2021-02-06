@@ -51,9 +51,9 @@ class GeodesicGaussian(torch.nn.Module):
         self.normalize = normalize
 
     def forward(self,
-        keypoints:      torch.Tensor,                       # [B, K, (S)UV or UV(S)] with K the number of keypoints
+        keypoints:      torch.Tensor, # [B, K, (S)UV or UV(S)] with K the number of keypoints
         spherical_grid: torch.Tensor, # [B, (S)UV or UV(S), (D), H, W]
-    ) -> torch.Tensor:                  # [B, K, (D), H, W]
+    ) -> torch.Tensor:                # [B, K, (D), H, W]
         inv_denom = -0.5 * torch.reciprocal(self.std ** 2)
         g = spherical_grid
         centroids = expand_spatial_dims(keypoints, g)
@@ -73,9 +73,12 @@ class GeodesicGaussian(torch.nn.Module):
 if __name__ == "__main__":
     from spherical_grid import SphericalGrid
     import cv2
-    
-    grid = SphericalGrid(width=512)
-    gg = GeodesicGaussian(std=9.0)
+    import sys
+
+    std = 9.0 if len(sys.argv) < 2 else float(sys.argv[1])
+    width = 512 if len(sys.argv) < 3 else int(sys.argv[2])
+    grid = SphericalGrid(width=width)
+    gg = GeodesicGaussian(std=std)
 
     B, K = 5, 4
 

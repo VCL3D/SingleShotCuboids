@@ -40,7 +40,7 @@ class QuasiManhattanCenterOfMass(torch.nn.Module):
 
     def _extract_center_of_mass_periodic(self,
         grid: torch.Tensor,     # [B, (S)VU, (D), H, W], order is (S)VU not UV(S), y coord first channel
-        heatmaps: torch.Tensor,  # [B, K, (D), H, W], with its value across the spatial dimensions summing to unity
+        heatmaps: torch.Tensor, # [B, K, (D), H, W], with its value across the spatial dimensions summing to unity
         epsilon: float=1e-12,
     ) -> torch.Tensor:          # [B, K, UV(S) or (S)VU]
         b, c, h, w = heatmaps.size()
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     import cv2
     import sys
 
-    mode = sys.argv[1]
+    mode = 'periodic' if len(sys.argv) < 2 else str(sys.argv[1])
     
     sg = SphericalGrid(width=512)
     g = Grid(width=512, height=256)

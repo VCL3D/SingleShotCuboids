@@ -14,21 +14,7 @@ def register(test):
     return test
 
 @register
-def test7():
-    unaligned = torch.Tensor([
-        [-0.9809, -0.0657],
-        [-0.8994, -0.0852],
-        [ 0.0081, -0.0539],
-        [ 0.0221, -0.0567],
-        [-0.9809,  0.0642],
-        [-0.8994,  0.0564],
-        [ 0.0081,  0.0315],
-        [ 0.0221,  0.0368]
-    ])
-    return torch.chunk(unaligned.unsqueeze(0), 2, dim=-2)
-
-@register
-def test8():
+def test1():
     unaligned = torch.Tensor([
         [-0.9743, -0.2491],
         [-0.5582, -0.1589],
@@ -42,7 +28,7 @@ def test8():
     return torch.chunk(unaligned.unsqueeze(0), 2, dim=-2)
 
 @register
-def test9():
+def test2():
     unaligned = torch.Tensor([
         [-0.9791, -0.3541],
         [-0.5517, -0.1809],
@@ -56,7 +42,7 @@ def test9():
     return torch.chunk(unaligned.unsqueeze(0), 2, dim=-2)
 
 @register
-def test10():
+def test3():
     unaligned = torch.Tensor([
         [-0.9882, -0.0736],
         [-0.7437, -0.0662],
@@ -70,7 +56,7 @@ def test10():
     return torch.chunk(unaligned.unsqueeze(0), 2, dim=-2)
 
 @register
-def test11():
+def test4():
     unaligned = torch.Tensor([
         [-0.9846, -0.5418],
         [ 0.0205, -0.2194],
@@ -84,21 +70,7 @@ def test11():
     return torch.chunk(unaligned.unsqueeze(0), 2, dim=-2)
 
 @register
-def test12():
-    unaligned = torch.Tensor([
-        [-0.7370, -0.2492],
-        [-0.7840, -0.2522],
-        [-0.0069, -0.3248],
-        [-0.0282, -0.3431],
-        [-0.7370,  0.2806],
-        [-0.7840,  0.2846],
-        [-0.0069,  0.4878],
-        [-0.0282,  0.4448]
-    ])
-    return torch.chunk(unaligned.unsqueeze(0), 2, dim=-2)
-
-@register
-def test13():
+def test5():
     unaligned = torch.Tensor([
         [-0.9825, -0.1939],
         [-0.7482, -0.1596],
@@ -112,7 +84,7 @@ def test13():
     return torch.chunk(unaligned.unsqueeze(0), 2, dim=-2)
 
 @register
-def test14():
+def test6():
     unaligned = torch.Tensor([
         [-0.9225, -0.2832],
         [-0.7755, -0.2755],
@@ -126,7 +98,7 @@ def test14():
     return torch.chunk(unaligned.unsqueeze(0), 2, dim=-2)
 
 @register
-def test15():
+def test7():
     unaligned = torch.Tensor([
         [-0.9369, -0.4814],
         [-0.4945, -0.1954],
