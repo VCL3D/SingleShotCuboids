@@ -19,7 +19,7 @@ Our models and code are publicly available at [https://github.com/VCL3D/SingleSh
 
 - **Geodesic Distance Loss** for boundary-aware keypoint estimation on the sphere.
 
--  **Geodesic Gaussian Heatmap Reconstruction** for spherical center of mass keypoints:
+- **Geodesic Gaussian** spherical heatmap reconstruction in the equirectangular domain.
 
 - **Homography-based Cuboid Fitting** that ensures end-to-end full Manhattan alignment.
 
