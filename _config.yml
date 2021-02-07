@@ -1,0 +1,12 @@
+title: Single-Shot Cuboids
+description: Geodesics-based End-to-end Manhattan Aligned Layout Estimation from Spherical Panoramas
+show_downloads: false
+theme: jekyll-theme-architect
+
+github:
+  # data_url: https://vcl3d.github.io/3D60/
+  # models_url: https://github.com/VCL3D/SphericalViewSynthesis/releases
+  owner_url: https://zokin.github.io
+  owner_name: Nikolaos Zioulis
+  
+google_analytics: UA-147231916-1
