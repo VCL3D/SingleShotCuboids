@@ -27,40 +27,42 @@ Our models and code are publicly available at [https://github.com/VCL3D/SingleSh
 
 ## Sun360
 
-<img width=45% src="./assets/images/sun3601.jpg"><img width=40% src="./assets/images/sun3601.gif">
+<img  src="./assets/images/sun3601.jpg"><img  src="./assets/images/sun3601.gif">
 
-<img width=45% src="../assets/images/sun3602.jpg"><img width=40% src="../assets/images/sun3602.gif">
+<img  src="../assets/images/sun3602.jpg"><img  src="../assets/images/sun3602.gif">
 
-<img width=45% src="assets/images/sun3603.jpg"><img width=40% src="assets/images/sun3603.gif">
+<img  src="assets/images/sun3603.jpg"><img  src="assets/images/sun3603.gif">
 
-<img width=45% src="../../assets/images/sun3604.jpg"><img width=40% src="../../assets/images/sun3604.gif">
+<img  src="../../assets/images/sun3604.jpg"><img  src="../../assets/images/sun3604.gif">
 
 ## Stanford2D3D
 
-<img width=45% src="./assets/images/s2d3d1.jpg"/><img width=40% src="./assets/images/s2d3d1.gif"/>
+<img  src="./assets/images/s2d3d1.jpg"><img  src="./assets/images/s2d3d1.gif">
 
-<img width=45% src="./assets/images/s2d3d2.jpg"/><img width=40% src="./assets/images/s2d3d2.gif"/>
+<img  src="./assets/images/s2d3d2.jpg"><img  src="./assets/images/s2d3d2.gif">
 
-<img width=45% src="./assets/images/s2d3d3.jpg"/><img width=40% src="./assets/images/s2d3d3.gif"/>
+<img  src="./assets/images/s2d3d3.jpg"><img  src="./assets/images/s2d3d3.gif">
 
-<img width=45% src="./assets/images/s2d3d4.jpg"/><img width=40% src="./assets/images/s2d3d4.gif"/>
+<img  src="./assets/images/s2d3d4.jpg"><img  src="./assets/images/s2d3d4.gif">
 
 ## Structure3D
 
-<img width=45% src="./assets/images/s3d1.jpg"/><img width=40% src="./assets/images/s3d1.gif"/>
+![s3d1](./assets/images/s3d1.jpg)
 
-<img width=45% src="./assets/images/s3d2.jpg"/><img width=40% src="./assets/images/s3d2.gif"/>
+<img  src="./assets/images/s3d1.jpg"/><img  src="./assets/images/s3d1.gif"/>
 
-<img width=45% src="./assets/images/s3d3.jpg"/><img width=40% src="./assets/images/s3d3.gif"/>
+<img  src="./assets/images/s3d2.jpg"/><img  src="./assets/images/s3d2.gif"/>
 
-<img width=45% src="./assets/images/s3d4.jpg"/><img width=40% src="./assets/images/s3d4.gif"/>
+<img  src="./assets/images/s3d3.jpg"/><img  src="./assets/images/s3d3.gif"/>
+
+<img  src="./assets/images/s3d4.jpg"/><img  src="./assets/images/s3d4.gif"/>
 
 ## Kujiale
 
-<img width=45% src="./assets/images/kuj1.jpg"/><img width=40% src="./assets/images/kuj1.gif"/>
+<img  src="./assets/images/kuj1.jpg"/><img  src="./assets/images/kuj1.gif"/>
 
-<img width=45% src="./assets/images/kuj2.jpg"/><img width=40% src="./assets/images/kuj2.gif"/>
+<img  src="./assets/images/kuj2.jpg"/><img  src="./assets/images/kuj2.gif"/>
 
-<img width=45% src="./assets/images/kuj3.jpg"/><img width=40% src="./assets/images/kuj3.gif"/>
+<img  src="./assets/images/kuj3.jpg"/><img  src="./assets/images/kuj3.gif"/>
 
-<img width=45% src="./assets/images/kuj4.jpg"/><img width=40% src="./assets/images/kuj4.gif"/>
+<img  src="./assets/images/kuj4.jpg"/><img  src="./assets/images/kuj4.gif"/>
