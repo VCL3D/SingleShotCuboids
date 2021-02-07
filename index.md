@@ -37,13 +37,13 @@ Our models and code are publicly available at [https://github.com/VCL3D/SingleSh
 
 ## Stanford2D3D
 
-<img  src="./assets/images/s2d3d1.jpg"><img  src="./assets/images/s2d3d1.gif">
+<img width=350 src="./assets/images/s2d3d1.jpg"><img  src="./assets/images/s2d3d1.gif">
 
-<img  src="./assets/images/s2d3d2.jpg"><img  src="./assets/images/s2d3d2.gif">
+<img width=450 src="./assets/images/s2d3d2.jpg"><img width=400 src="./assets/images/s2d3d2.gif">
 
-<img  src="./assets/images/s2d3d3.jpg"><img  src="./assets/images/s2d3d3.gif">
+<img width=250 src="./assets/images/s2d3d3.jpg"><img width=300 src="./assets/images/s2d3d3.gif">
 
-<img  src="./assets/images/s2d3d4.jpg"><img  src="./assets/images/s2d3d4.gif">
+<img width=300 src="./assets/images/s2d3d4.jpg"><img width=350 src="./assets/images/s2d3d4.gif">
 
 ## Structure3D
 
