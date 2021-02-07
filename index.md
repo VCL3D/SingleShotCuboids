@@ -47,9 +47,7 @@ Our models and code are publicly available at [https://github.com/VCL3D/SingleSh
 
 ## Structure3D
 
-![s3d1](./assets/images/s3d1.jpg)
-
-<img  src="./assets/images/s3d1.jpg"/><img  src="./assets/images/s3d1.gif"/>
+<img src="./assets/images/s3d1.jpg" width=49%/><img  src="./assets/images/s3d1.gif" width=44%/>
 
 <img  src="./assets/images/s3d2.jpg"/><img  src="./assets/images/s3d2.gif"/>
 
