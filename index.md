@@ -13,15 +13,15 @@ Our models and code are publicly available at [https://github.com/VCL3D/SingleSh
 
 - **Single-shot**, end-to-end, spherical panorama-based cuboid layout corner estimation.
 
-- **Spherical Center of Mass** for boundary-aware keypoint estimation on the sphere.
+- **Spherical Center of Mass** for boundary-aware keypoint estimation on the sphere. [code](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/quasi_manhattan_center_of_mass.py)
 
-- **Explicit layout constraints** via direct keypoint estimation.
+- **Explicit layout constraints** via direct keypoint estimation. [code](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/quasi_manhattan_center_of_mass.py)
 
-- **Geodesic Distance Loss** for boundary-aware keypoint estimation on the sphere.
+- **Geodesic Distance Loss** for boundary-aware keypoint estimation on the sphere. [code](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/geodesic_distance.py)
 
-- **Geodesic Gaussian** spherical heatmap reconstruction in the equirectangular domain.
+- **Geodesic Gaussian** spherical heatmap reconstruction in the equirectangular domain. [code](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/geodesic_gaussian.py)
 
-- **Homography-based Cuboid Fitting** that ensures end-to-end full Manhattan alignment.
+- **Homography-based Cuboid Fitting** that ensures end-to-end full Manhattan alignment. [code](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/cuboid_fitting.py)
 
 # Results
 
