@@ -19,7 +19,7 @@ This repository contains the code and models for the paper _"Single-Shot Cuboids
 The [`GeodesicDistance`](https://github.com/VCL3D/SingleShotCuboids/blob/584aec312fb381b0a02acd89dd2e299f3fdc7ec5/ssc/geodesic_distance.py#L24) module found in [`./ssc/geodesic_distance.py`](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/geodesic_distance.py) calculates the great circle or harvesine distance of two coordinates on the sphere. The following image shows the harvesine distance and the corresponding great circle path between points on the equirectangular domain. Distances from the red square to the colored diamonds are also reported in the corresponding color.
 
 ```py
-                        loss = GeodesicDistance()
+                            loss = GeodesicDistance()
 ```
 
 <p align="center">
@@ -71,7 +71,9 @@ Their differences are depicted in the following figure, where the CoM of a set o
 The `standard` method (_white filled particles_) fails to properly localize the CoM as it neglects the image's continuity around the horizontal boundary.
 The `periodic` method (_darker filled colored particles_) resolves this issue taking into account the continuous boundary.
 
+<p align="center">
 <img src=./assets/images/boundary_scom2.png width=400/>
+</p>
 
 The input to the module's `forward` function is:
 
@@ -156,7 +158,9 @@ Examples on the different test sets follow, with the images on the left being th
 
 The [`SphericalConv2d`](https://github.com/VCL3D/SingleShotCuboids/blob/584aec312fb381b0a02acd89dd2e299f3fdc7ec5/ssc/spherically_padded_conv.py#L44) module in [`./ssc/spherically_padded_conv.py`](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/spherically_padded_conv.py) applies the padding depicted below that adapts traditional convs to the equirectangular domain by replication padding at the singularities/poles and circular padding around the horizontal boundary.
 
+<p align="center">
 <img src=./assets/images/sconv.png width=400/>
+</p>
 
 ## Citation
 If you used or found this code and/or models useful, please cite the following:
@@ -171,7 +175,8 @@ If you used or found this code and/or models useful, please cite the following:
 ```
 
 ## Acknowledgements
-
+<p align="center">
 <img src=./assets/images/atlantis_logo.png width=300>
+</p>
 
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme [__ATLANTIS__](http://atlantis-ar.eu/) under grant agreement No 951900.
