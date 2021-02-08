@@ -189,4 +189,7 @@ If you used or found this code and/or models useful, please cite the following:
 ```
 
 ## Acknowledgements
+
+<img src=./assets/images/atlantis_logo.png width=300>
+
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme [__ATLANTIS__](http://atlantis-ar.eu/) under grant agreement No 951900.
