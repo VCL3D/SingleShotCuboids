@@ -16,9 +16,15 @@ This repository contains the code and models for the paper _"Single-Shot Cuboids
 ## Code
 
 ## Geodesic Distace
-The `GeodesicDistance` module found in `./ssc/geodesic_distance.py` calculates the great circle or harvesine distance of two coordinates on the sphere. The following image shows the harvesine distance and the corresponding great circle path between points on the equirectangular domain. Distances from the red square to the colored diamonds are also reported in the corresponding color.
+The [`GeodesicDistance`](https://github.com/VCL3D/SingleShotCuboids/blob/584aec312fb381b0a02acd89dd2e299f3fdc7ec5/ssc/geodesic_distance.py#L24) module found in [`./ssc/geodesic_distance.py`](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/geodesic_distance.py) calculates the great circle or harvesine distance of two coordinates on the sphere. The following image shows the harvesine distance and the corresponding great circle path between points on the equirectangular domain. Distances from the red square to the colored diamonds are also reported in the corresponding color.
 
-![Geodesic Distance](./assets/images/geodesic.png)
+```py
+                loss = GeodesicDistance()
+```
+
+<p align="center">
+  <img src=./assets/images/geodesic.png width=400/>
+</p>
 
 An interactive comparison between the geodesic distance and the L2 distance can be run with:
 
@@ -30,7 +36,11 @@ Left clicking selects the first (left hand side) point, and right clicking the c
 Upon having selected a left and right point, their geodesic and L2 distance will be printed.
 
 ## Geodesic Heatmaps
-The `GeodesicGaussian` module found in `./ssc/geodesic_gaussian.py` relies on the geodesic distance and reconstructs a Gaussian distribution directly on the equirectangular domain that respects the continuity around the horizontal boundary, and, at the same time, is aware of the equirectangular projection's distortion.
+The [`GeodesicGaussian`](https://github.com/VCL3D/SingleShotCuboids/blob/584aec312fb381b0a02acd89dd2e299f3fdc7ec5/ssc/geodesic_gaussian.py#L41) module found in [`./ssc/geodesic_gaussian.py`](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/geodesic_gaussian.py) relies on the geodesic distance and reconstructs a Gaussian distribution directly on the equirectangular domain that respects the continuity around the horizontal boundary, and, at the same time, is aware of the equirectangular projection's distortion.
+
+```py
+                module = GeodesicGaussian(std=9.0, normalize=True)
+```
 
 The following images show a Gaussian distribution defined on the sphere (left) and the corresponding distribution reconstructed on the equirectangular domain (right).
 
@@ -53,7 +63,7 @@ Different (20) random centroid distributions can be visualized by runningwith:
 with the (optional) std argument given in degrees (default: `9.0`), and the (optional) width argument defining the equirectangular pixels at the longitudinal angular coordinate (default: `512`).
 
 ## Quasi-Manhattan Center of Mass
-The `QuasiManhattanCenterOfMass` module found in `./ssc/quasi_manhattan_center_of_mass.py` estimates the meridian-aligned top and bottom corners using either:
+The [`QuasiManhattanCenterOfMass`](https://github.com/VCL3D/SingleShotCuboids/blob/584aec312fb381b0a02acd89dd2e299f3fdc7ec5/ssc/quasi_manhattan_center_of_mass.py#L6) module found in [`./ssc/quasi_manhattan_center_of_mass.py`](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/quasi_manhattan_center_of_mass.py) estimates the meridian-aligned top and bottom corners using either:
 - the `standard` mode that calculates the default center of mass (CoM), or,
 - the `periodic` mode which calculates a boundary aware spherical center of mass.
 
@@ -83,7 +93,11 @@ An example with randomly allocated points, their geodesic gaussian reconstructio
 ```
 
 ## Cuboid Fitting
-The `CuboidFitting` module found in `./ssc/cuboid_fitting.py` fits a cuboid into `8` estimated corner locations as described in the paper and depicted in the following figure.
+The [`CuboidFitting`](https://github.com/VCL3D/SingleShotCuboids/blob/584aec312fb381b0a02acd89dd2e299f3fdc7ec5/ssc/cuboid_fitting.py#L6) module found in [`./ssc/cuboid_fitting.py`](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/cuboid_fitting.py) fits a cuboid into `8` estimated corner locations as described in the paper and depicted in the following figure.
+
+```py
+                  head = CuboidFitting(mode='joint')
+```
 
 ![Cuboid Fitting](./assets/images/homography.png "Cuboid Fitting")
 
@@ -158,7 +172,7 @@ Examples on the different test sets follow, with the images on the left being th
 
 ## Spherically Padded Convolution
 
-The `SphericalConv2d` module in `./ssc/spherically_padded_conv.py` applies the padding depicted below that adapts traditional convs to the equirectangular domain by replication padding at the singularities/poles and circular padding around the horizontal boundary.
+The [`SphericalConv2d`](https://github.com/VCL3D/SingleShotCuboids/blob/584aec312fb381b0a02acd89dd2e299f3fdc7ec5/ssc/spherically_padded_conv.py#L44) module in [`./ssc/spherically_padded_conv.py`](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/spherically_padded_conv.py) applies the padding depicted below that adapts traditional convs to the equirectangular domain by replication padding at the singularities/poles and circular padding around the horizontal boundary.
 
 ![Spherically Padded Conv2d](./assets/images/sconv.png "Spherically Padded Conv2d")
 
@@ -172,3 +186,7 @@ If you used or found this code and/or models useful, please cite the following:
   month        = "February",
   year         = "2021"
 }
+```
+
+## Acknowledgements
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme [__ATLANTIS__](http://atlantis-ar.eu/) under grant agreement No 951900.
