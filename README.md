@@ -1,6 +1,6 @@
 # Single-Shot Cuboids: Geodesics-based End-to-end Manhattan Aligned Layout Estimation from Spherical Panoramas
 
-[![Paper](http://img.shields.io/badge/paper-arxiv-critical.svg?style=plastic)](https://arxiv.org/pdf/)
+[![Paper](http://img.shields.io/badge/paper-arxiv-critical.svg?style=plastic)](https://arxiv.org/pdf/2102.03939.pdf)
 [![Project Page](http://img.shields.io/badge/Project-Page-blueviolet.svg?style=plastic)](https://vcl3d.github.io/SingleShotCuboids/)
 
 This repository contains the code and models for the paper _"Single-Shot Cuboids: Geodesics-based End-to-end Manhattan Aligned Layout Estimation from Spherical Panoramas"_.
@@ -134,7 +134,7 @@ Examples on the different test sets follow, with the images on the left being th
 
 <img width=16% src="./assets/images/s2d3d_2_pred.png"><img width=16% src="./assets/images/s2d3d_2_cuboid.png"><img width=16% src="./assets/images/s2d3d_3_pred.png"><img width=16% src="./assets/images/s2d3d_3_cuboid.png"><img width=16% src="./assets/images/s2d3d_4_pred.png"><img width=16% src="./assets/images/s2d3d_4_cuboid.png">
 
-### Structure3D
+### Structured3D
 
 <img width=16% src="./assets/images/s3d_1_pred.png"><img width=16% src="./assets/images/s3d_1_cuboid.png"><img width=16% src="./assets/images/s3d_2_pred.png"><img width=16% src="./assets/images/s3d_2_cuboid.png"><img width=16% src="./assets/images/s3d_3_pred.png"><img width=16% src="./assets/images/s3d_3_cuboid.png">
 
