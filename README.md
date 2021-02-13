@@ -164,7 +164,7 @@ The [`SphericalConv2d`](https://github.com/VCL3D/SingleShotCuboids/blob/584aec31
 
 ## Citation
 If you used or found this code and/or models useful, please cite the following:
-```yaml
+```bibtex
 @arcticle{zioulis2021singleshot,
   author       = "Zioulis, Nikolaos and Alvarez, Federico and Zarpalas, Dimitris and Daras, Petros",
   title        = "Single-Shot Cuboids: Geodesics-based End-to-end Manhattan Aligned Layout Estimation from Spherical Panoramas",
