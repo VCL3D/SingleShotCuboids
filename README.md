@@ -163,6 +163,13 @@ The [`SphericalConv2d`](https://github.com/VCL3D/SingleShotCuboids/blob/584aec31
 </p>
 
 ## Citation
+
+<p align="center">
+<a href="https://arxiv.org/pdf/2102.03939.pdf" alt="paper link">
+<img src="./assets/images/paper_image.jpg" width=400 alt="paper pages"/> 
+</a>
+</p>
+
 If you used or found this code and/or models useful, please cite the following:
 ```bibtex
 @arcticle{zioulis2021singleshot,
