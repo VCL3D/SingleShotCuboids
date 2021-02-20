@@ -23,6 +23,10 @@ Our models and code are publicly available at [https://github.com/VCL3D/SingleSh
 
 - **Homography-based Cuboid Fitting** that ensures end-to-end full Manhattan alignment. [code](https://github.com/VCL3D/SingleShotCuboids/blob/master/ssc/cuboid_fitting.py)
 
+# Paper
+
+[![Paper pages](./assets/images/paper_image.jpg)](https://arxiv.org/pdf/2102.03939.pdf)
+
 # Results
 
 ## Sun360
