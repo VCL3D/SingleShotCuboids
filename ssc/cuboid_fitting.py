@@ -8,7 +8,19 @@ class CuboidFitting(torch.nn.Module):
         mode:               str='joint', # one of ['joint', 'floor', 'ceil', 'avg']
         floor_distance:     float=-1.6,
     ):
-        super(CuboidFitting, self).__init__()
+        super(CuboidFitting, self).__init__()        
+        self._mode = mode
+        self._floor_distance = floor_distance
+        self._set_func(mode, floor_distance)
+        cuboid_axes = torch.Tensor([[
+            [-1, 1],
+            [-1, -1],
+            [1, -1],
+            [1, 1], 
+        ]]).float()
+        self.register_buffer("cuboid_axes", cuboid_axes)
+
+    def _set_func(self, mode, floor_distance):
         self.homography_func = functools.partial(
             self._homography_floor_svd,
             floor_z=floor_distance)\
@@ -27,13 +39,24 @@ class CuboidFitting(torch.nn.Module):
                     )
                 )
             )
-        cuboid_axes = torch.Tensor([[
-            [-1, 1],
-            [-1, -1],
-            [1, -1],
-            [1, 1], 
-        ]]).float()
-        self.register_buffer("cuboid_axes", cuboid_axes)
+
+    @property
+    def mode(self):
+        return self._mode
+
+    @mode.setter
+    def mode(self, value):        
+        self._mode = value
+        self._set_func(self.mode, self.floor_distance)
+
+    @property
+    def floor_distance(self):
+        return self._floor_distance
+
+    @floor_distance.setter
+    def floor_distance(self, value):        
+        self._floor_distance = value
+        self._set_func(self.mode, self.floor_distance)
 
     def _get_scale_all(self, coords: torch.Tensor, eps: float=1e-12) -> torch.Tensor:
         a_x1 = torch.linalg.norm(coords[:, 0, :] - coords[:, 1, :], ord=2, dim=1)
@@ -54,6 +77,7 @@ class CuboidFitting(torch.nn.Module):
             where R is an 3x3 rotation matrix, t 3x1 translation, s scale.
             i.e. solves the orthogonal Procrutes problem.
         '''
+        #NOTE: adapted from https://gist.github.com/mkocabas/54ea2ff3b03260e3fedf8ad22536f427
         b, _, c = points1.shape
         # 1. Remove mean.
         points1 = torch.transpose(points1, -2, -1)

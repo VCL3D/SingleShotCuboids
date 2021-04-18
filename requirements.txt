@@ -1,0 +1,10 @@
+open3d==0.9.0.0
+tqdm
+cv2
+pillow
+toolz
+requests
+flask
+panda3d
+torchserve
+torch-model-archiver
