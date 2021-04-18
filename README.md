@@ -95,8 +95,8 @@ http://localhost:8080/predictions/ssc
 
 ### Download
 
-The `./ckpts` and `./mars` folders contain the torch checkpoint saved files for all models, as well as the torch archives for serving them.
-Should they not be automatically downloaded, use [Git LFS](https://git-lfs.github.com/) to download them.
+The `./ckpt` and `./mar` folders should contain the torch checkpoint saved files for all models, as well as the torch archives for serving them.
+To download them either run the `download.bat` scripts at the respective folders, or check the README instructions to download them manually from the respective releases.
 
 
 ## Modules
