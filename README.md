@@ -287,4 +287,5 @@ Parts of the code used in this work have been borrowed or adapted from these rep
 - [HorizonNet](https://github.com/sunset1995/HorizonNet) from [Cheng Sun](https://github.com/sunset1995)
 - [Stacked Hourglass](https://github.com/princeton-vl/pytorch_stacked_hourglass) from [Chris Rockwell](https://github.com/crockwell)
 - [Svd Gist](https://gist.github.com/mkocabas/54ea2ff3b03260e3fedf8ad22536f427) from [Muhammed Kocabas](https://github.com/mkocabas)
+- The `panorama_server.py` is based on a template image server created by [Werner Bailer](https://github.com/wbailer)
   
