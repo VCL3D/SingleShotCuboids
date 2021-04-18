@@ -131,3 +131,7 @@ dmypy.json
 .vscode
 scripts/logs
 troubleshooting.md
+/ckpts
+/mars
+*.pth
+*.mar
