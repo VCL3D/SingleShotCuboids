@@ -47,7 +47,7 @@ if __name__ == "__main__":
     context = Context()
     setattr(context, "manifest", {
         "model": {
-            "serializedFile": os.path.join("ckpts", f"{args.model}.pth")
+            "serializedFile": os.path.join("ckpt", f"{args.model}.pth")
         }
     })
     setattr(context, "system_properties", {

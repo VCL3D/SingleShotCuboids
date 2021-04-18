@@ -1,2 +1,2 @@
-torchserve --start --ncs --model-store ../mars --models hnet.mar
+torchserve --start --ncs --model-store ../mar --models hnet.mar
 pause

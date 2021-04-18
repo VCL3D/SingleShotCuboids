@@ -1,2 +1,2 @@
-torchserve --start --ncs --model-store ../mars --models ssc.mar
+torchserve --start --ncs --model-store ../mar --models ssc.mar
 pause
