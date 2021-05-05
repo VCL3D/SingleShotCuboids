@@ -7,5 +7,5 @@ torch-model-archiver --model-name ssc_syn --version 1.0 ^
 ../ssc/modules/hourglass.py,../ssc/modules/maxpool2d_aa.py,^
 ../ssc/modules/upsample2d.py,../ssc/cuboid_fitting.py,^
 ../ssc/quasi_manhattan_center_of_mass.py,^
-../ssc/spherical_grid.py
+../ssc/spherical_grid.py,requirements.txt
 pause
