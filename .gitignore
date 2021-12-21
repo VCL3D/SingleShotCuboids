@@ -131,3 +131,11 @@ dmypy.json
 # JEKYLL
 .jekyll-cache/
 _site/
+
+*.pth
+.vscode/
+*.mar
+textures/
+*.usdz
+*.usda
+troubleshooting.md
