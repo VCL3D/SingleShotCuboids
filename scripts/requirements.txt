@@ -1,2 +1,3 @@
 toolz
 open3d==0.9.0.0
+usd-core

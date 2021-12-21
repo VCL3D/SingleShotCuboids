@@ -2,7 +2,7 @@ torch-model-archiver --model-name ssc --version 1.0 ^
  -f --model-file ../ssc/model.py ^
  --serialized-file ../ckpt/ssc.pth ^
  --handler ../ssc_handler.py --export-path ../mar ^
- --extra-files ../mesh_handler.py,../boundary_handler.py,^
+ --extra-files ../usdz_exporter.py,../obj_handler.py,../boundary_handler.py,^
 ../ssc/modules/bottleneck.py,../ssc/modules/conv2d.py,^
 ../ssc/modules/hourglass.py,../ssc/modules/maxpool2d_aa.py,^
 ../ssc/modules/upsample2d.py,../ssc/cuboid_fitting.py,^

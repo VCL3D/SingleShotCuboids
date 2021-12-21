@@ -6,7 +6,7 @@ from panda3d.core import Triangulator
 
 #NOTE: code borrowed from https://github.com/bertjiazheng/Structured3D
 
-class MeshHandler(object):
+class ObjHandler(object):
     def __init__(self):
         pass
 
@@ -148,7 +148,7 @@ class MeshHandler(object):
         mesh.triangle_uvs = np.array(triangle_uvs[triangles.reshape(-1), :], dtype=np.float64)
         return mesh
 
-    def create_mesh(self,
+    def create_obj_mesh(self,
         panorama:       np.array,
         corners:        np.array,
         floor_z:        float=-1.6,

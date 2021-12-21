@@ -34,6 +34,7 @@ Additional options are:
 - `--remove_ceiling`: Using this flag will remove the ceiling from the resulting meshes.
 - `--save_boundary`: Using this flag will save a visualization of the layout wireframe on the panorama.
 - `--save_mesh`: Using this flag will save a textured mesh of the result.
+- `--mesh_type`: A choice for the mesh output. Can be either `obj` or `usdz` for Wavefront and Pixar's formats respectively.
 
 ### Serve
 

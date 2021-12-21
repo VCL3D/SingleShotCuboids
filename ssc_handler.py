@@ -22,7 +22,8 @@ except ImportError:
     from quasi_manhattan_center_of_mass import QuasiManhattanCenterOfMass as CoM
     from spherical_grid import Grid
 
-from mesh_handler import MeshHandler
+from obj_handler import ObjHandler
+from usdz_exporter import UsdzExporter
 from boundary_handler import BoundaryHandler
 
 logger = logging.getLogger(__name__)
@@ -36,7 +37,7 @@ def is_url(url):
   except ValueError:
     return False
 
-class SscHandler(MeshHandler, BoundaryHandler):
+class SscHandler(ObjHandler, UsdzExporter, BoundaryHandler):
     PI = float(np.pi)
 
     def __init__(self,):
@@ -84,12 +85,14 @@ class SscHandler(MeshHandler, BoundaryHandler):
                 image = row.get("data").to(self.device)
                 mesh_url = row.get('outputs', {}).get('mesh', '')
                 viz_url = row.get('outputs', {}).get('boundary', '')
+                metadata = row.get('Source', {'sceneId': 'test', 'type': 'panorama'})
                 break
             elif 'data' in row and isinstance(row.get('data'), dict):
                 json = row['data']
                 color_url = json['inputs']['color']
                 viz_url = json['outputs']['boundary']
                 mesh_url = json['outputs']['mesh']
+                metadata = json.get('Source', {'sceneId': 'test', 'type': 'panorama'})
                 r = requests.get(color_url, timeout=1.0) #TODO: make timeout configurable
                 image = r.content
             elif 'body' in row and isinstance(row.get('body'), dict):
@@ -97,11 +100,13 @@ class SscHandler(MeshHandler, BoundaryHandler):
                 color_url = json['inputs']['color']
                 viz_url = json['outputs']['boundary']
                 mesh_url = json['outputs']['mesh']
+                metadata = row.get('Source', {'sceneId': 'test', 'type': 'panorama'})
                 r = requests.get(color_url, timeout=1.0) #TODO: make timeout configurable
                 image = r.content
             else:
                 image = row.get("data") or row.get("body")
                 mesh_url, viz_url = '', ''
+                metadata = row.get('Source', {'sceneId': 'test', 'type': 'panorama'})
             raw = io.BytesIO(image)
             image = Image.open(raw)
             image = np.array(image) # cvt color?
@@ -125,6 +130,7 @@ class SscHandler(MeshHandler, BoundaryHandler):
             align_corners=None if image.shape[-1] > 512 else True
         )
         return {
+            'metadata': metadata,
             'panorama': {
                 'original': original,
                 'scaled': image,
@@ -192,25 +198,35 @@ class SscHandler(MeshHandler, BoundaryHandler):
         if mesh_uri:
             floor_z = inference_outputs.get('floor_distance', -1.6)
             ignore_ceiling = inference_outputs.get('remove_ceiling', True)
-            mesh = self.create_mesh(img, cor_id, floor_z, ignore_ceiling)
+            mesh = self.create_obj_mesh(img, cor_id, floor_z, ignore_ceiling)
             out_file = io.BytesIO()
             tex = Image.fromarray(np.asarray(mesh.texture))
             tex.save(out_file, 'JPEG')
             out_file.seek(0)
+            scene_name = inference_outputs['metadata']['sceneId']
             if is_url(mesh_uri):
-                requests.post(inference_outputs['outputs']['mesh'],                
+                requests.post(inference_outputs['outputs']['mesh'],                    
                     files={
-                        'json': (None, json.dumps({'mesh': {                    
-                            'vertices': np.asarray(mesh.vertices).tolist(),
-                            'triangles': np.asarray(mesh.triangles).tolist(),
-                            'normals': np.asarray(mesh.vertex_normals).tolist(),
-                            'triangle_uvs': [uv.tolist() for uv in mesh.triangle_uvs],                        
-                        }}), 'application/json'),
+                        'json': (None, json.dumps({
+                            'metadata': inference_outputs['metadata'],
+                            'mesh': {                    
+                                'vertices': np.asarray(mesh.vertices).tolist(),
+                                'triangles': np.asarray(mesh.triangles).tolist(),
+                                'normals': np.asarray(mesh.vertex_normals).tolist(),
+                                'triangle_uvs': [uv.tolist() for uv in mesh.triangle_uvs],                        
+                            }
+                        }), 'application/json'),
                         'texture': ('test.obj', out_file, 'application/octet-stream'),
+                        'mesh': (f'{scene_name}.usdz', self.export_usdz(mesh, scene_name, io.BytesIO()), 'application/octet-stream'),
                     }
                 )
             elif os.path.exists(os.path.dirname(mesh_uri) or os.getcwd()):
-                open3d.io.write_triangle_mesh(mesh_uri, mesh)
+                if '.obj' in mesh_uri:
+                    open3d.io.write_triangle_mesh(mesh_uri, mesh)
+                elif '.usdz' in mesh_uri:
+                    self.export_usdz(mesh, scene_name)
+                else:
+                    logger.error(f'Mesh file type ({mesh_uri}) not supported.')
             else:
                 logger.warning(f'Mesh URI ({mesh_uri}) is not valid.')
         if boundary_uri:
@@ -221,6 +237,9 @@ class SscHandler(MeshHandler, BoundaryHandler):
             out_file.seek(0)
             if is_url(boundary_uri):
                 requests.post(boundary_uri, files={
+                    'json': (None, json.dumps({
+                        'metadata': inference_outputs['metadata']
+                    })),
                     'image': out_file
                 })
             elif os.path.exists(os.path.dirname(boundary_uri) or os.getcwd()):
@@ -229,7 +248,6 @@ class SscHandler(MeshHandler, BoundaryHandler):
             else:
                 logger.warning(f'Boundary URI ({boundary_uri}) is not valid.')
         return [cor_id.tolist()]
-        
 
     def handle(self, data, context):
         """

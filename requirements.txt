@@ -8,3 +8,4 @@ flask
 panda3d
 torchserve
 torch-model-archiver
+usd-core

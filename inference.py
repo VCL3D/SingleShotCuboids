@@ -37,6 +37,9 @@ if __name__ == "__main__":
     parser.add_argument('--remove_ceiling', action='store_true')
     parser.add_argument('--save_boundary', action='store_true')
     parser.add_argument('--save_mesh', action='store_true')
+    parser.add_argument('--mesh_type', type=str, default='obj', 
+        choices=['usdz', 'obj']
+    )
     args = parser.parse_args()
 
     if args.model not in _HANDLERS_:
@@ -66,7 +69,7 @@ if __name__ == "__main__":
             "data": img,
             'outputs': {
                 'boundary': f'{os.path.join(args.output_path, name)}_viz.JPG' if args.save_boundary else '',
-                'mesh': f'{os.path.join(args.output_path, name)}.obj' if args.save_mesh else '',
+                'mesh': f'{os.path.join(args.output_path, name)}.{args.mesh_type}' if args.save_mesh else '',
             },
             'floor_distance': args.floor_distance,
             'remove_ceiling': args.remove_ceiling,

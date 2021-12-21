@@ -81,14 +81,15 @@ def run(
 
     @app.route('/save/<path:filename>', methods=['POST'])
     def save(filename):
-        print([k for k in flask.request.files.keys()])
+        app.logger.info([k for k in flask.request.files.keys()])        
+        json_obj = json.loads(flask.request.form['json'])
+        app.logger.info(f"scene: {json_obj['metadata']['sceneId']}")
         if 'image' in flask.request.files:
             image = flask.request.files['image']
             image.save(os.path.join(output_path, filename))
-        elif 'texture' in flask.request.files:
+        if 'texture' in flask.request.files:
             texture = flask.request.files['texture']
-            image = np.array(Image.open(texture))
-            json_obj = json.loads(flask.request.form['json'])
+            image = np.array(Image.open(texture))            
             mesh = open3d.geometry.TriangleMesh(
                 vertices=open3d.utility.Vector3dVector(
                     np.array(json_obj['mesh']['vertices'])
@@ -100,11 +101,14 @@ def run(
             mesh.vertex_normals = open3d.utility.Vector3dVector(
                 np.array(json_obj['mesh']['normals'])
             )
-            mesh.texture = open3d.geometry.Image(image) # cvt color?
+            mesh.texture = open3d.geometry.Image(image)
             mesh.triangle_uvs = np.array(json_obj['mesh']['triangle_uvs'])
             open3d.io.write_triangle_mesh(
                 os.path.join(output_path, texture.filename), mesh
             )
+        if 'mesh' in flask.request.files:
+            mesh = flask.request.files['mesh']
+            mesh.save(os.path.join(output_path, mesh.filename))
         return ''
 
     @app.route('/<path:filename>')
