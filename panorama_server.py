@@ -89,7 +89,7 @@ def run(
             image.save(os.path.join(output_path, filename))
         if 'texture' in flask.request.files:
             texture = flask.request.files['texture']
-            image = np.array(Image.open(texture))            
+            image = np.array(Image.open(texture))
             mesh = open3d.geometry.TriangleMesh(
                 vertices=open3d.utility.Vector3dVector(
                     np.array(json_obj['mesh']['vertices'])
