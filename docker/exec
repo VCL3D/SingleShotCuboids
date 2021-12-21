@@ -1,0 +1,23 @@
+#!/bin/bash
+# DRAK
+# IMPORTANT!: There is a discrepancy between DOS and UNIX carriage return (\r). This script must be UNIX encoded. e.g. Notepad++: Edit>EOL Conversion>Unix (LF)
+
+echo "*****************************"
+echo "** YOU ARE INSIDE: exec.sh"
+echo "** USER: " $(whoami)
+echo "** PWD: " $(pwd)
+echo "** LS: " $(ls)
+echo "** GPU AVAILABLE: " $(python -c 'import torch; print(torch.cuda.is_available())')
+echo "*****************************"
+
+# make .mar locally
+cd code
+torch-model-archiver --model-name hnet --version 1.0 --model-file ./hnet/model.py --serialized-file hnet.pth --handler hnet_handler.py -f --extra-files .
+mv hnet.mar ../model_store/hnet.mar
+cd ..
+
+# start service
+torchserve --start --ncs --ts-config config.properties --model-store /model_store --models hnet.mar
+
+# prevent docker exit
+tail -f /dev/null
