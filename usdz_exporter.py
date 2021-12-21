@@ -64,7 +64,7 @@ class UsdzExporter(object):
             usd_dir = os.path.dirname(file_path)
             rel_filepath = posixpath.join(texture_dir, 'texture_diffuse.png')
             img_tensor_uint8 = np.asarray(mesh.texture)
-            img = Image.fromarray(img_tensor_uint8)
+            img = Image.fromarray(img_tensor_uint8) # img_tensor_uint8[:, :, ::-1]
             img.save(posixpath.join(usd_dir, rel_filepath))
             texture = UsdShade.Shader.Define(stage, '/Textures/diffuse_texture')
             texture.CreateIdAttr('UsdUVTexture')

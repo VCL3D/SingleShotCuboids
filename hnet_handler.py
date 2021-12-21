@@ -487,7 +487,7 @@ class HNetHandler(ObjHandler, UsdzExporter, BoundaryHandler):
             ignore_ceiling = inference_output.get('remove_ceiling', True)
             mesh = self.create_obj_mesh(img, cor_id, floor_z, ignore_ceiling)
             out_file = io.BytesIO()
-            tex = Image.fromarray(np.asarray(mesh.texture))
+            tex = Image.fromarray(np.asarray(mesh.texture)) # np.asarray(mesh.texture)[:, :, ::-1]
             tex.save(out_file, 'JPEG')
             out_file.seek(0)
             scene_name = inference_output['metadata']['sceneId']

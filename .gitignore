@@ -133,3 +133,6 @@ scripts/logs
 troubleshooting.md
 *.pth
 *.mar
+*.usdz
+*.usda
+textures/
