@@ -21,7 +21,7 @@ class UsdzExporter(object):
         verts = np.asarray(mesh.vertices)
         indices = np.asarray(mesh.triangles).reshape(-1)
         uvs = np.asarray(mesh.triangle_uvs)
-        uvs[..., 1] *= -1.0
+        uvs[..., 1] = 1.0 - uvs[..., 1]
         normals = np.asarray(mesh.triangle_normals)
         stage = Usd.Stage.CreateNew(str(f'{mesh_name}.usda'))
         world = stage.DefinePrim('/World', 'Xform')
